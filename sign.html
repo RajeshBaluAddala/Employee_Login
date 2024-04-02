@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign In</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .container h2 {
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+        }
+        .btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+<script>
+    function signIn() {
+    let id = document.getElementById('id').value;
+
+    // Check if ID is valid (for demonstration purpose, assuming IDs 101 and 102 are valid)
+    if (id=="") {
+        alert("Invalid ID. Please try again."); // Alert the user for invalid ID
+        console.log("failed")
+    } else {
+        
+        window.location.href = "dashBoard.html?id=" + id; // Pass ID as a query parameter
+        console.log("success")
+    }
+}
+</script>
+
+</head>
+<body>
+    <div class="container">
+        <h2>Sign In</h2>
+        <form>
+            <div class="form-group">
+                <label for="id">ID (Username or Email)</label>
+                <input type="text" id="id" name="id" placeholder="Enter your ID">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password">
+            </div>
+            <button type="button" class="btn" onclick="signIn()">Sign In</button>
+        </form>
+    </div>
+
+    
+</body>
+</html>
